@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: kaihei-frontend
+    restart: always
+    env_file:
+      - ./.env.frontend
+    ports:
+      - 1993:1993
+  backend:
+    build:
+      context: ./backend
+    container_name: kaihei-backend
+    restart: always
+    env_file:
+      - ./.env.backend
